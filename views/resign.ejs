@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>resign</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/resign.css">
+
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="./js/resign.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="hidden-col col-md-5 col-lg-4  hidden">
+        <div class="slider">
+          <ul class="container">
+            <li><img src="./img/01-1.jpg" alt="" width="480px" ></li>
+            <li><img src="./img/01-2.jpg" alt="" width="480px" ></li>
+            <li><img src="./img/01-3.jpg" alt=""  width="480px"></li>
+            <li><img src="./img/01-4.jpg" alt=""  width="480px"></li>
+          </ul>
+        </div>         
+      </div>
+      <div class="hidden-col  col-md-7 col-lg-8 ">
+        <!-- 导航栏 -->
+        <nav class="bar">
+          <a class="navbar-brand" href="#"></a>
+          <div class="banner">
+            <span><a href="#">申请靓号</a></span>
+            <span><a href="#"><i class="fa fa-envelope"></i>邮箱注册</a></span>
+            <span>
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                简体中文
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">繁體中文</a>
+                <a class="dropdown-item" href="#">English</a>
+              </div>
+            </span>
+            <span><a href="#">意见反馈</a></span>
+          </div>
+          <div class="content">
+            <h1>欢迎注册</h1>
+            <h4>快乐，心安</h4>
+            <p class="result"></p>
+            <div class="form">
+              <input type="text" name="name" id="username" placeholder="昵称">
+              <p class="name-claim p-icon"><i class="fa fa-exclamation"></i>请输入姓名</p>
+              <input type="password" name='password' id="password"  minlength="8" maxlength="16" placeholder="密码">
+              <div class="password-claim">
+                <p class="p-icon"><i class="fa fa-check fa1 a"></i><i class="fa fa-exclamation b"></i>不能包含空格</p>
+                <p class="p-icon"><i class="fa fa-check fa1 c"></i><i class="fa fa-exclamation d"></i>长度为8-16个字符</p>
+              </div>
+              
+
+              <button type="button" id="submit" class="btn btn-primary">立即注册</button>
+            </div>
+            <div class="footer">
+              <input type="checkbox" checked="checked" class="check"><p class="text">我已阅读相关条约</p>
+            </div>
+          </div>    
+ 
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>

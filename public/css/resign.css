@@ -1,0 +1,129 @@
+/*
+* @Author: qiaoyong
+* @Date:   2018-12-23 14:15:21
+* @E-mail: 21718534@zju.edu.cn
+* @Last Modified by:   乔勇
+* @Last Modified time: 2018-12-24 21:55:54
+*/
+body, html{
+	padding:0;
+	margin:0;
+	height:706px;
+	overflow: hidden;
+}
+.container-fluid {
+    width: 100%;
+    padding:0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.hidden{
+	overflow: hidden;
+}
+.slider{
+	width: 480px;
+    position: relative; 
+    overflow: hidden;
+    height: 726px;
+
+}
+.slider .container{
+	float: left;
+	list-style: none;
+	position: absolute;
+	padding: 0px;
+}
+.bar{
+	color: #000;
+	text-decoration: none;
+}
+.bar a{
+	color: #888;
+	text-decoration: none;
+	padding:0px;
+}
+.dropdown-menu {
+    position: absolute;
+    transform: translate3d(352px, 54px, 0px);
+    top: -4px;
+    left: 0px;
+    will-change: transform;
+    border: 1px solid #fff;
+    font-size: 16px;
+    padding-left: 9px;
+}
+.banner{
+	float: right;
+    margin: 20px 40px 0 0;
+    font-size: 16px;
+    padding: 10px 0 0;
+    line-height: 24px;
+}
+.bar span{
+	float: left;
+	width: 100px;
+	text-align: center;
+}
+.bar span :hover{
+	color: #000;
+}
+.content{
+	margin:80px auto;
+	width: 60%;
+	/*text-align: center;*/
+}
+.form{
+	width: 100%;
+	float: left;
+	margin:38px 0 10px 0;
+}
+input, .btn-primary{
+	width: 100%;
+	margin-top: 25px;
+	height:52px;
+	line-height: 50px;
+	border-radius: 5%;
+	border: 1px solid #888;
+}
+.btn-primary{
+	height: 64px;
+	line-height:48px;
+	font-size: 24px;
+}
+.check{
+	height: 14px;
+	width: 14px;
+}
+.footer p{
+	display: inline-block;
+	font-size: 14px;
+	color: #888;
+	margin-left: 3px;
+}
+.name-claim{
+	display: none;
+}
+.password-claim{
+	display: none;
+}
+.p-icon{
+	color: #888;
+	/*margin-left: 5px;*/
+	font-size:14px;
+	margin-top: 5px;
+}
+.p-icon .fa{
+	
+	margin-right: 3px;
+	width: 17px;
+	height: 17px;
+	border-radius:50%;
+	color: #fff;
+	background-color: #888;
+	text-align: center;
+	line-height: 20px;
+}
+.p-icon .fa1{
+	background-color: #28a745;
+	display: none;
+}
