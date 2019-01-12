@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%=username %>的个人主页</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/my.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar navbar-expand-sm  navbar-dark my-bar">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="tryit_133.htm#">my论坛</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="tryit_133.htm#">首页</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="tryit_133.htm#">看视频</a>
+    </li>
+  </ul>
+  <nav class="navbar navbar-expand-sm  navbar-dark my-search">
+      <span><a href="#"><i class="fa fa-at"></i>提到我</a></span>
+      <span><a href="#"><i class="fa fa-envelope-o"></i>私信</a></span>
+      <span><a href="info"><i class="fa fa-user"></i><%= username %></a></span>
+    <form class="form-inline" action="/action_page.php">
+
+      <input class="form-control mr-sm-2" type="text" placeholder="搜名字/账号/广播">
+      <button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </nav>
+</nav>
+
+<!-- 主体 -->
+  <div class="container">
+    <div class="top">
+      <img src="./img/xixi01.jpg" alt="" width="960px" height="300px">
+    </div>
+    <div class="avatar">
+      <img class="img-avatar" src="./img/01.jpg" alt="" width="140px" height="140px">
+      <a href="/info"><span class="username"><%= username %></span></a>
+      <a href=""><span class="say"><%= say %></span></a>
+    </div>
+    <div class="content">
+      <div class="left">
+        <div class="media border p-3">
+        <img src="./avatar/01.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+          <a href="#"><h6><%=username %></h6></a>
+          <p>大江东去浪淘尽，千古风流人物</p>
+          <small><i>2019-1-2</i></small>
+          <div class="span"><a href=""><span> 转发 |</span></a><a href=""><span> 评论 |</span></a><a href=""><span> 删除 </span></a></div>
+        </div>
+      </div>
+      </div>
+      <div class="right">
+        <div class="info newinfo">
+          <div><a href=""><span>121</span><span>广播</span></a></div>
+          <div><a href=""><span>121</span><span>广播</span></a></div>
+          <div><a href=""><span>121</span><span>广播</span></a></div>
+          <div><a href=""><span>121</span><span>广播</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

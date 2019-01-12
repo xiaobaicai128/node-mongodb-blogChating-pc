@@ -29,7 +29,7 @@
   <nav class="navbar navbar-expand-sm  navbar-dark my-search">
       <span><a href="#"><i class="fa fa-at"></i>提到我</a></span>
       <span><a href="#"><i class="fa fa-envelope-o"></i>私信</a></span>
-      <span><a href="#"><i class="fa fa-user"></i>张三</a></span>
+      <span><a href="info"><i class="fa fa-user"></i><%= username %></a></span>
     <form class="form-inline" action="/action_page.php">
 
       <input class="form-control mr-sm-2" type="text" placeholder="搜名字/账号/广播">
@@ -45,14 +45,32 @@
       <div class="form-group">
         <label for="comment">来，说说你在做什么，想什么:</label>
         <textarea class="form-control" rows="5" id="comment"></textarea>
-        <span><a href=""><i class="fa"></i>表情</a></span>
-        <span><a href=""><i class="fa"></i></a>图片</span>
-        <span><a href=""><i class="fa"></i></a>朋友</span>
+        <span class="first"><a href=""><i class="fa fa-smile-o"></i>表情</a></span>
+        <span><a href=""><i class="fa fa-picture-o"></i>图片</a></span>
+        <span><a href=""><i class="fa fa-male"></i>朋友</a></span>
         <button type="button" class="btn btn-success">成功</button>
+      </div>
+      <div class="media border p-3">
+        <img src="./avatar/01.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+          <a href="#"><h6>托尼·李</h6></a>
+          <p>大江东去浪淘尽，千古风流人物</p>
+          <small><i>2019-1-2</i></small>
+          <div class="span"><a href=""><span> 赞 |</span></a><a href=""><span> 转发 |</span></a><a href=""><span> 评论</span></a></div>
+        </div>
       </div>
     </div>
     <div class="right">
-      
+      <div class="client">
+        <a href=""><img src="./avatar/01.jpg" alt=""></a>
+        <a href="my"><span><%=username %></span></a>
+      </div>
+      <div class="info">
+        <div><a href=""><span>121</span><span>广播</span></a></div>
+        <div><a href=""><span>121</span><span>广播</span></a></div>
+        <div><a href=""><span>121</span><span>广播</span></a></div>
+        <div><a href=""><span>121</span><span>广播</span></a></div>
+      </div>
     </div>
   </div>
 </div>

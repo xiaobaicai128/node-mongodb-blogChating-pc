@@ -1,0 +1,57 @@
+/*
+* @Author: qiaoyong
+* @Date:   2019-01-06 14:25:35
+* @E-mail: 21718534@zju.edu.cn
+* @Last Modified by:   乔勇
+* @Last Modified time: 2019-01-06 15:33:10
+*/
+.top{
+	margin-top: 76px;
+    margin-left: -15px;
+    margin-bottom: -115px;
+    z-index: -10;
+    height: 262px;
+    width: 960px;
+    overflow: hidden;
+}
+.avatar{
+	margin-left: 20px;
+}
+.img-avatar{
+	margin-bottom: -119px;
+	border: solid 4px #21c193;
+	border-radius: 10px;
+}
+a:hover{
+	text-decoration: none;
+}
+.username{
+	position: relative;
+    top: 73px;
+    left: 10px;
+    color: #0f2943;
+    font-size: 24px;
+    font-weight: 700;
+}
+.say{
+	font-size: 17px;
+    position: relative;
+    top: 110px;
+    left: -44px;
+    color: #000;
+    
+}
+.left{
+	padding-top: 85px;
+}
+.right{
+	background-color: #f8f8f8 !important;
+}
+.newinfo{
+	 background-color: #fff !important; 
+    height: 50px;
+    padding-top: 4px;
+    /* margin-top: 10px; */
+    overflow: hidden;
+}
+    

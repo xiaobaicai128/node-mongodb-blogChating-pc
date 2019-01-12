@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%=username %>的个人主页</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./css/main.css"> -->
+  <link rel="stylesheet" href="./css/info.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar navbar-expand-sm  navbar-dark my-bar">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="tryit_133.htm#">my论坛</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="tryit_133.htm#">首页</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="tryit_133.htm#">看视频</a>
+    </li>
+  </ul>
+  <nav class="navbar navbar-expand-sm  navbar-dark my-search">
+      <span><a href="#"><i class="fa fa-at"></i>提到我</a></span>
+      <span><a href="#"><i class="fa fa-envelope-o"></i>私信</a></span>
+      <span><a href="info"><i class="fa fa-user"></i><%= username %></a></span>
+    <form class="form-inline" action="/action_page.php">
+
+      <input class="form-control mr-sm-2" type="text" placeholder="搜名字/账号/广播">
+      <button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </nav>
+</nav>
+
+<!-- 主体 -->
+  <div class="container">
+    <div class="content">
+      <div class="left">
+        <div class="avatar">
+          <a href="changeAvatar"><img class="img-avatar" src="./img/01.jpg" alt="" width="140px" height="140px" title="更换头像"></a>
+        </div>  
+        <span>个人资料</span>
+        <ul>
+          <li class="baseinfo">基本资料</li>
+          <a href="changeAvatar"><li class="changeAvatar">修改头像</li></a>
+        </ul>
+        
+      </div>
+     
+      <div class="right">
+        <form action="" method="post">
+          <div class="decoration">
+            <p>*为必填，完整的资料会为你带来更多关注</p>
+            <p>如实填写行业、教育和工作等信息，能帮你找到微博里的同行、同学和同事</p>
+          </div>
+          <div class="message">
+            <label for="username">*姓名：</label><input type="text" name="username" id="username" value="<%= username%>"><br>
+            <label for="username">*性别：<input type="radio" id="gender" checked name="gender" value="female">女
+              <input type="radio" name="gender"  value="male">男 <br>
+            <label for="birthday">*生日：</label><input type="date" name="birthday" id="birthday"><br>
+            
+              <span>所在地</span>：
+              <div class="localtion"><input list="country" > 
+                        <datalist id="country"> 
+                          <option value="中国" checked> 
+                          <option value="美国"> 
+                          <option value="日本"> 
+                          <option value="德国"> 
+                          <option value="韩国"> 
+                        </datalist> 
+                        <input list="province" > 
+                        <datalist id="province"> 
+                          <option value="山东" checked> 
+                          <option value="浙江"> 
+                          <option value="广东"> 
+                          <option value="辽宁"> 
+                          <option value="江苏"> 
+                        </datalist>
+                        <input list="city" > 
+                        <datalist id="city"> 
+                          <option value="潍坊" checked> 
+                          <option value="临沂"> 
+                          <option value="济南"> 
+                          <option value="青岛"> 
+                          <option value="淄博"> 
+                        </datalist>
+              </div>
+              
+              <br><span id="say-span">个人签名：</span>
+              <textarea name="say" id="say" style="width:282px; height:142px"> </textarea>
+              <div class="submit">
+                <input type="button" value="保存" class="sure">
+                <input type="reset" value="取消">
+              </div>
+              
+          </div>
+                  
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

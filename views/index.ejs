@@ -40,14 +40,15 @@
         <!-- 模态框主体 -->
         <div class="modal-body my-modal-body">
             <div class="alert alert1 alert-danger alert-dismissible fade show">该用户没有注册，<a href="/resign">立即注册</a></div>
-            <div class="alert alert2 alert-danger alert-primary fade show">密码错误</a></div>
-            <input type="text" name="name" class="name" placeholder="支持账号/手机号登录">
-            <input type="password" name="password" class="password" placeholder="密码">
-            <span class="remove"><i class="fa fa-close"></i></span>
-            <span class="claim1"><i class="fa fa-close"></i></span>
-            <span class="claim2"><i class="fa fa-close"></i></span>
-            <button type="button" class="btn btn-success my-button">登录</button>
-            
+            <div class="alert alert2 alert-danger alert-primary fade show">密码错误</div>
+            <form action="/dologin" method="post" >
+              <input type="text" name="name" class="name" placeholder="支持账号/手机号登录">
+              <input type="password" name="password" class="password" placeholder="密码">
+              <span class="remove"><i class="fa fa-close"></i></span>
+              <span class="claim1"><i class="fa fa-close"></i></span>
+              <span class="claim2"><i class="fa fa-close"></i></span>
+              <button type="button" class="btn btn-success my-button">登录</button>
+            </form>
             <div class="footer">
               <a href="resign"><span>快速注册 |</span></a>
               <a href="forget-password"><span>忘了密码 |</span></a>

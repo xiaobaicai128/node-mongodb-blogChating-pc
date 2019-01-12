@@ -3,7 +3,7 @@
 * @Date:   2018-12-23 15:25:28
 * @E-mail: 21718534@zju.edu.cn
 * @Last Modified by:   乔勇
-* @Last Modified time: 2018-12-24 22:17:13
+* @Last Modified time: 2019-01-05 21:23:46
 */
 $(() => {
 	let len = $('.container li').length;
@@ -72,16 +72,18 @@ $(() => {
 					'username': $('#username').val(),
 					'password': $('#password').val()
 				}, (result) => {
-					console.log(result == 1)
 					if(result == 1) {
 						console.log(888)
 						$('.result').text('注册成功，将于2秒后跳转到主页面').css('color', '#08ec08');
 						setTimeout(() => {
 							window.location.href = '/main';
 						}, 2000)
-					} else{
+					} else if(result == -1){
 						console.log('用户名被占用')
 						$('#usenameChange').text('用户名被占用').css('color', 'red');
+					} else if(result == -2){
+						$('#usenameChange').text('注册失败').css('color', 'red');
+
 					}
 				})
 			}

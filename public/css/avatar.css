@@ -1,0 +1,238 @@
+/*
+* @Author: qiaoyong
+* @Date:   2019-01-07 22:15:50
+* @E-mail: 21718534@zju.edu.cn
+* @Last Modified by:   乔勇
+* @Last Modified time: 2019-01-08 21:02:09
+*/
+/*
+* @Author: qiaoyong
+* @Date:   2018-12-25 20:12:35
+* @E-mail: 21718534@zju.edu.cn
+* @Last Modified by:   乔勇
+* @Last Modified time: 2019-01-07 22:12:41
+*/
+body{
+	background-color: #73cff1
+}
+.my-bar{
+	padding-left: 180px;
+    background-color: #2c9fcc;
+    position: fixed;
+    margin-top: -76px;
+    width: 1600px;
+    z-index: 10;
+}
+
+.my-bar ul li:nth-child(1) a{
+	/*color: red !important;*/
+	font-size: 23px;
+}
+.my-bar ul li:nth-child(2) a{
+	color: #fff !important;
+}
+.my-bar ul li{
+	line-height: 36px;
+	font-size: 19px;
+}
+.my-bar ul li:hover a{
+	color: #fff !important;
+	background-color: #2597c5;
+}
+.my-search{
+	height: 32px;
+	float: right;
+	right: -327px;
+}
+.my-search span {
+	margin-left: 5px;
+	text-decoration: none;
+	font-size: 16px;
+}
+.my-search span a{
+	color: #c9e6f3;
+}
+.my-search span a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+.my-search form{
+	margin-left: 10px;
+
+}
+.my-search form input, .my-search form button{
+	height: 20px;
+	font-size: 16px;
+}
+.my-search form button{
+	margin-left: -47px;
+	margin-bottom: 20px;
+	background-color: rgba(0,0,0,0);
+	border: 0px solid #fff;
+	width: 30px;
+	text-align: center;
+}
+.my-search form button i{
+	font-size: 14px;
+	color: #888;
+}
+.my-search form button:hover, .my-search form button:hover i{
+	background-color:rgba(0,0,0,0);
+	color: red;
+}
+
+.content{
+	margin:0px;
+	padding:0px;
+	width: 960px;
+
+	background-color: #73cff1;
+	margin-top: 76px;
+}
+.content .left{
+	width: 170px;
+    background-color: #eff2f4;
+    height: 800px;
+    margin-left: -15px;
+    float: left;
+}
+.content .left .avatar{
+	margin: 20px 14px;
+}
+.content .left .avatar img{
+	border: 3px solid rgba(0,123,255,.25);
+	border-radius: 10px;
+}
+.content .left span{
+	left: 20px;
+	font-size: 16px;
+	margin-left: 20px;
+}
+.content .left ul{
+	margin-top: 7px;
+}
+.content .left li{
+	font-size: 14px;
+    list-style: none;
+    margin-top: 7px;
+    padding-left: 53px;
+    margin-left: -20px;
+	color: #000;
+    cursor: pointer;
+}
+.content .left .changeAvatar{
+    background-color: #fff;
+}
+.content .right{
+	background-color: #fff !important;
+	width: 790px;
+	height: 800px;
+	float: left;
+}
+.content .right .decoration{
+	width: 500px;
+    margin: 47px 0 25px 82px;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #999;
+    border: 1px solid #ECECEC;
+    background: #F5F5F5;
+}
+.content .right .decoration p{
+	margin-bottom: 5px;
+}
+.content .right .message{
+	margin-left: 120px;
+	font-size: 16px;
+}
+.content .right .message input{
+	margin-top: 30px;
+
+}
+.content .right .message #username, .content .right .message #birthday{
+	width: 192px;
+	height: 21px;
+	margin-left: 41px;
+}
+.content .right .message #gender{
+	margin-left: 41px;
+}
+.content .right .message .localtion{
+	margin-top: -52px;
+    margin-left: 89px;
+}
+.content .right .message .localtion input{
+	width: 83px;
+	height: 21px;
+    
+}
+.content .right .message #say-span{
+	margin-top: -5px;
+	margin-left: -25px;
+    position: absolute;
+}
+.content .right .message #say{
+	width: 282px;
+    height: 142px;
+    position: absolute;
+    margin-left: 90px;
+}
+.content .right .message span{
+	margin-left: -9px;
+}
+.content .right .message .submit{
+	margin-top: 140px;
+	margin-left: 90px;
+}
+.content .right .message .submit input{
+	width: 65px;
+	height: 21px;
+	background-color: #f7f7f7;
+	font-size: 12px;
+	line-height: 12px;
+}
+.content .right .message .submit .sure{
+	background-color:#43abdc;
+	color: #fff;
+	margin-right: 10px;
+}
+.content .right .banner{
+	width: 730px;
+    height: 135px;
+    margin: 40px auto 0;
+}
+.content .right .banner img{
+	width: 730px;
+    height: 135px;
+
+}
+.content .right .bottom .img-avatar, .content .right .bottom .message{
+	float: left;
+}
+.content .right .bottom p{
+	margin-left: 105px;
+	font-size: 16px;
+	margin-top: 23px;
+}
+.content .right .bottom .img-avatar{
+	margin-left: 105px;
+}
+
+.content .right .bottom .message input{
+	width: 65px;
+	height: 21px;
+	font-size: 12px;
+}
+.content .right .bottom .message .sure{
+	top: 85px;
+    position: relative;
+    left: -68px;
+    background-color: #288FC9;
+    color: #fff;
+}
+.content .right .bottom .message .reset{
+	top: 85px;
+    position: relative;
+    left: -68px;
+}
+
