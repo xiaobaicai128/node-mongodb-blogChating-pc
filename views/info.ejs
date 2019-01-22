@@ -18,10 +18,10 @@
 <nav class="navbar navbar-expand-sm  navbar-dark my-bar">
   <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="tryit_133.htm#">my论坛</a>
+      <a class="nav-link" href="main">my论坛</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="tryit_133.htm#">首页</a>
+      <a class="nav-link" href="main">首页</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="tryit_133.htm#">看视频</a>
@@ -44,7 +44,7 @@
     <div class="content">
       <div class="left">
         <div class="avatar">
-          <a href="changeAvatar"><img class="img-avatar" src="./img/01.jpg" alt="" width="140px" height="140px" title="更换头像"></a>
+          <a href="changeAvatar"><img class="img-avatar" src="./avatar/<%=avatar%>" alt="" width="140px" height="140px" title="更换头像"></a>
         </div>  
         <span>个人资料</span>
         <ul>
@@ -62,50 +62,88 @@
           </div>
           <div class="message">
             <label for="username">*姓名：</label><input type="text" name="username" id="username" value="<%= username%>"><br>
-            <label for="username">*性别：<input type="radio" id="gender" checked name="gender" value="female">女
-              <input type="radio" name="gender"  value="male">男 <br>
+            <label for="username">*性别：<input type="radio" id="gender" checked name="gender" value="女">女
+              <input type="radio" name="gender"  value="男">男 <br>
             <label for="birthday">*生日：</label><input type="date" name="birthday" id="birthday"><br>
             
               <span>所在地</span>：
-              <div class="localtion"><input list="country" > 
-                        <datalist id="country"> 
+              <div class="localtion">
+                <input list="country" id="i_country"> 
+                  <datalist id="country"> 
                           <option value="中国" checked> 
                           <option value="美国"> 
                           <option value="日本"> 
                           <option value="德国"> 
                           <option value="韩国"> 
-                        </datalist> 
-                        <input list="province" > 
-                        <datalist id="province"> 
+                  </datalist> 
+                <input list="province" id="i_province"> 
+                  <datalist id="province"> 
                           <option value="山东" checked> 
                           <option value="浙江"> 
                           <option value="广东"> 
                           <option value="辽宁"> 
                           <option value="江苏"> 
-                        </datalist>
-                        <input list="city" > 
-                        <datalist id="city"> 
+                  </datalist>
+                <input list="city" id="i_city"> 
+                  <datalist id="city"> 
                           <option value="潍坊" checked> 
                           <option value="临沂"> 
                           <option value="济南"> 
                           <option value="青岛"> 
                           <option value="淄博"> 
-                        </datalist>
+                  </datalist>
               </div>
               
               <br><span id="say-span">个人签名：</span>
-              <textarea name="say" id="say" style="width:282px; height:142px"> </textarea>
+              <textarea name="say" id="say" style="width:282px; height:142px" > </textarea>
               <div class="submit">
                 <input type="button" value="保存" class="sure">
                 <input type="reset" value="取消">
               </div>
-              
-          </div>
-                  
+              <div class="alert alert-success feedback">
+                <strong>保存成功!</strong> 
+              </div>          
+          </div>           
         </form>
       </div>
     </div>
   </div>
-
 </body>
+<script>
+
+  $('.sure').click(() => {
+    $('.sure').attr('disabled', 'disabled'); // 禁止重复提交
+    $('.feedback').show(500);
+    let username = $('#username').val();
+    let gender = $('input[name = gender]:checked').val();
+    let birthday = $('#birthday').val();
+    let say = $('#say').val();
+    let country, city, province;
+    country = $('#i_country').val()
+    city = $('#i_city').val();
+    province = $('#i_province').val();
+
+    $.post('/add',{
+      'username':username,
+      'gender': gender,
+      'birthday': birthday,
+      'say': say,
+      'country': country,
+      'localtion': province + city
+    }, (err, result) => {
+        console.log(result)
+      
+      if(err) {
+        window.localtion = '/sorry';
+      } else if(result == 5) {
+        $('.feedback').show(500);
+        $('.sure').removeAttr('disabled'); // 恢复重复提交
+      }
+    })
+    $('#username').click(() => {
+      $('.feedback').hide(100);
+    })
+
+  })
+</script>
 </html>

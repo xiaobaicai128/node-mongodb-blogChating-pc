@@ -3,7 +3,7 @@
 * @Date:   2019-01-06 14:25:35
 * @E-mail: 21718534@zju.edu.cn
 * @Last Modified by:   乔勇
-* @Last Modified time: 2019-01-06 15:33:10
+* @Last Modified time: 2019-01-17 21:20:20
 */
 .top{
 	margin-top: 76px;
@@ -37,12 +37,13 @@ a:hover{
 	font-size: 17px;
     position: relative;
     top: 110px;
-    left: -44px;
+    left: 6px;
     color: #000;
     
 }
 .left{
 	padding-top: 85px;
+
 }
 .right{
 	background-color: #f8f8f8 !important;
@@ -54,4 +55,19 @@ a:hover{
     /* margin-top: 10px; */
     overflow: hidden;
 }
-    
+.message{
+    margin-top: 35px;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.my{
+    margin-left: 0px;
+}
+.my-cotainer{
+    margin-left: 230px;
+}

@@ -3,7 +3,7 @@
 * @Date:   2018-12-21 19:45:24
 * @E-mail: 21718534@zju.edu.cn
 * @Last Modified by:   乔勇
-* @Last Modified time: 2019-01-12 20:08:25
+* @Last Modified time: 2019-01-19 21:01:31
 */
 const express = require('express');
 const app = express();
@@ -50,7 +50,18 @@ app.post('/dosetavatar', router.doSetAvatar)
 app.get('/cut', router.showCut)
 // 执行切图
 app.get('/docut', router.doCut)
+// 更新个人信息数据
+app.post('/add', router.doAdd)
+// 发言
+app.post('/comment', router.doComment)
+// ajax服务，得到comment
+app.get('/getallcomment', router.getAllComment)
+// 获得某个用户信息
+app.get('/getuserinfo', router.getUserInfo)
 
+
+// 报错页面
+app.get('/sorry', router.showSorry)
 
 // 监听端口
 app.listen('4000');

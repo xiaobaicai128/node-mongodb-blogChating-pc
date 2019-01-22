@@ -18,10 +18,10 @@
 <nav class="navbar navbar-expand-sm  navbar-dark my-bar">
   <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="tryit_133.htm#">my论坛</a>
+      <a class="nav-link" href="main">my论坛</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="tryit_133.htm#">首页</a>
+      <a class="nav-link" href="main">首页</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="tryit_133.htm#">看视频</a>
@@ -44,7 +44,7 @@
     <div class="content">
       <div class="left">
         <div class="avatar">
-          <a href="changeAvatar"><img class="img-avatar" src="./img/01.jpg" alt="" width="140px" height="140px" title="更换头像"></a>
+          <a href="changeAvatar"><img class="img-avatar" src="./avatar/<%=avatar%>" alt="" width="140px" height="140px" title="更换头像"></a>
         </div>  
         <span>个人资料</span>
         <ul>
@@ -62,7 +62,7 @@
           <p>支持jpg、jpeg、gif、png格式的图片，不超过2M
                 建议图片尺寸大于180×180</p>
           <div class="img-avatar">
-            <img src="./img/01.jpg" alt="" width="180px" height="180px">
+            <img src="./avatar/<%=avatar%>" alt="" width="180px" height="180px">
           </div>
           <div class="message">
             <form action="dosetavatar" method="post" enctype="multipart/form-data">

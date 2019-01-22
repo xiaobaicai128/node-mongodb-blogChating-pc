@@ -10,6 +10,7 @@
   <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="./js/main.js"></script>
 </head>
 <body>
 
@@ -17,10 +18,10 @@
 <nav class="navbar navbar-expand-sm  navbar-dark my-bar">
   <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="tryit_133.htm#">my论坛</a>
+      <a class="nav-link" href="main">my论坛</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="tryit_133.htm#">首页</a>
+      <a class="nav-link" href="main">首页</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="tryit_133.htm#">看视频</a>
@@ -44,26 +45,30 @@
     <div class="left">
       <div class="form-group">
         <label for="comment">来，说说你在做什么，想什么:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
-        <span class="first"><a href=""><i class="fa fa-smile-o"></i>表情</a></span>
-        <span><a href=""><i class="fa fa-picture-o"></i>图片</a></span>
-        <span><a href=""><i class="fa fa-male"></i>朋友</a></span>
-        <button type="button" class="btn btn-success">成功</button>
+        <form>
+          <textarea class="form-control" rows="5" id="comment" ></textarea>
+          <span class="first"><a href=""><i class="fa fa-smile-o"></i>表情</a></span>
+          <span><a href=""><i class="fa fa-picture-o"></i>图片</a></span>
+          <span><a href=""><i class="fa fa-male"></i>朋友</a></span>
+          <button type="button" id="button" class="btn btn-success">成功</button>
+          <div class="alert alert-success feedback">
+            <strong>发表成功!</strong> 
+          </div>
+        </form>
       </div>
-      <div class="media border p-3">
-        <img src="./avatar/01.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-        <div class="media-body">
-          <a href="#"><h6>托尼·李</h6></a>
-          <p>大江东去浪淘尽，千古风流人物</p>
-          <small><i>2019-1-2</i></small>
-          <div class="span"><a href=""><span> 赞 |</span></a><a href=""><span> 转发 |</span></a><a href=""><span> 评论</span></a></div>
+      <div class="media border p-3 " >
+        <div class="placeholder ">
+          <div class="tem"></div>
+          <!-- 占位 -->
         </div>
+        
+        
       </div>
     </div>
     <div class="right">
       <div class="client">
-        <a href=""><img src="./avatar/01.jpg" alt=""></a>
-        <a href="my"><span><%=username %></span></a>
+        <a href="/changeAvatar"><img src="./avatar/<%=avatar%>" alt=""></a>
+        <a href="my"><span id="myname"><%=username %></span></a>
       </div>
       <div class="info">
         <div><a href=""><span>121</span><span>广播</span></a></div>
@@ -76,4 +81,18 @@
 </div>
 
 </body>
+<!-- 使用underscore 模板， 先在源码上设置一下underscore替代的形式 -->
+<script type="text/javascript" src="./js/underscore.no-flect.js"></script>
+<script type="text/template" id="template">
+    <img src="./avatar/{{=avatar}}" alt="{{username}}" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+          
+          <a href="#"><h6>{{=username}}</h6></a>
+          <p>{{=comment}}</p>
+          <small><i>{{=date}}</i></small>
+          <div class="span"><a href=""><span> 赞 |</span></a><a href=""><span> 转发 |</span></a><a href=""><span> 评论</span></a></div> 
+        </div>
+</script>
+
+  
 </html>

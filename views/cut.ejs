@@ -28,17 +28,6 @@
         var x = parseInt($(".jcrop-holder>div:first").css("left"));
         var y = parseInt($(".jcrop-holder>div:first").css("top"));
 
-//      $.get("/docut",{
-//          "w" : w,
-//          "h" : h,
-//          "x" : x,
-//          "y" : y
-//      },function(result){
-//          if(result == "1"){
-//              alert("改名成功");
-//              window.location = "/";
-//          }
-//      });
         $.get('/docut',{
             "w" : w,
             "h" : h,
@@ -47,8 +36,10 @@
         },function(result){
             console.log(result)
             if(result == '4'){
-                alert('上传成功！');
-                window.location = '/';
+                
+                window.location = '/changeAvatar';
+            } else {
+                window.location = '/sorry';
             }
 
         })
