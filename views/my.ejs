@@ -53,20 +53,20 @@
       <div class="left">
         <div class="media border p-3">
         <img src="./avatar/<%=avatar%>" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-        <div class="media-body">
-          <a href="#"><h6><%=username %></h6></a>
-          <p>大江东去浪淘尽，千古风流人物</p>
-          <small><i>2019-1-2</i></small>
-          <div class="span"><a href=""><span> 转发 |</span></a><a href=""><span> 评论 |</span></a><a href=""><span> 删除 </span></a></div>
+        <div class="media border p-3 size" >
+          <div class="placeholder ">
+            <div class="tem"></div>
+            <!-- 占位 -->
+          </div>
         </div>
       </div>
       </div>
       <div class="right">
         <div class="info newinfo">
-          <div><a href=""><span>121</span><span>广播</span></a></div>
-          <div><a href=""><span>121</span><span>广播</span></a></div>
-          <div><a href=""><span>121</span><span>广播</span></a></div>
-          <div><a href=""><span>121</span><span>广播</span></a></div>
+          <div><a href=""><span><%=count %></span><span>广播</span></a></div>
+          <div><a href=""><span>11</span><span>好友</span></a></div>
+          <div><a href=""><span>2</span><span>消息</span></a></div>
+          <div><a href=""><span>121</span><span>广场</span></a></div>
         </div>
         <div class="message">
           <ul>
@@ -80,7 +80,36 @@
   </div>
 
 </body>
+<script type="text/javascript" src="./js/underscore.no-flect.js"></script>
+<script type="text/template" id="template">
+    
+        <div class="media-body"> 
+          <a href="#"><h6>{{=username }}</h6></a>
+          <p>{{=comment }}</p>
+          <small><i>{{=date }}</i></small>
+          <div class="span trf"><a href=""><span> 赞 |</span></a><a href=""><span> 转发 |</span></a><a href=""><span> 评论</span></a></div> 
+        </div>
+</script>
 <script>
+  $(() => {
+    let compiled = _.template($('#template').html());
+    getMyComment();
+    function getMyComment(){
+      $.get('/getMyComment', (result) => {
+        iterator(0);
+        function iterator(i){
+          var html = compiled({
+              'username': result[i].username,
+              'comment': result[i].comment,
+              'date': result[i].date
+          })
+          $('.placeholder').append($(html));
+          iterator(i+1);
+        }
+        
 
+      })
+    }
+  })
 </script>
 </html>

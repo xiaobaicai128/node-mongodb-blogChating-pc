@@ -3,7 +3,7 @@
 * @Date:   2019-01-02 21:12:05
 * @E-mail: 21718534@zju.edu.cn
 * @Last Modified by:   乔勇
-* @Last Modified time: 2019-01-19 17:02:43
+* @Last Modified time: 2019-01-24 22:10:16
 */
 // 建立数据库
 var MongoClient = require('mongodb').MongoClient;
@@ -26,7 +26,7 @@ function init(){
 		let db = client.db('forum');
 
 		if(err) {
-			console.log(err);
+			// console.log(err);
 			return;
 		}
 		db.collection('forum').createIndex({'username': 1}, null, (err, result) => {
@@ -59,8 +59,8 @@ exports.find = function(collectionName, json, argumentC, argumentD){
 		var callback = argumentD;
 		var args = argumentC; // 将argumentC作为json传参
 		// 省略的条数 = 每页显示的数量*页数
-		var skipNumber = args.pagemount * args.page || 0;
-		var limit = args.pagemount || 0;
+		var skipNumber = args.pageamount * args.page || 0;
+		var limit = args.pageamount || 0;
 		var sort = args.sort || {}; // 排序方式
 	} else {
         throw new Error("find函数的参数个数，必须是3个，或者4个。");
@@ -74,13 +74,13 @@ exports.find = function(collectionName, json, argumentC, argumentD){
 
 		let rel = db.collection(collectionName).find(json).limit(limit).skip(skipNumber).sort(sort);
 		rel.each((err, doc) => {
-			console.log(doc)
+			// console.log(doc)
 			if(err){
 				callback(err, null);
 				client.close();
 				return;
 			}
-			console.log(doc)
+			// console.log(doc)
 			if(doc != null){
 				result.push(doc); // 循环遍历文档，将所有的文档都保存到结果数组中
 			} else {
@@ -119,6 +119,21 @@ exports.updateMany = function(collectionName, json1, json2, callback){
 				callback(null, result);
 				client.close();
 			}
+		})
+	})
+}
+// 得到所有comment的数量
+exports.getCount = function(collectionName, json, callback){
+	_connectDB((err, client) => {
+		let db = client.db('forum');
+		db.collection(collectionName).count(json).then((count) => {
+			if(err){
+				callback(err, null);
+				client.close();
+				return;
+			}
+			callback(null, count);
+			client.close();
 		})
 	})
 }

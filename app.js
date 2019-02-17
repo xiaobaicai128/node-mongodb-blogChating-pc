@@ -3,7 +3,7 @@
 * @Date:   2018-12-21 19:45:24
 * @E-mail: 21718534@zju.edu.cn
 * @Last Modified by:   乔勇
-* @Last Modified time: 2019-01-19 21:01:31
+* @Last Modified time: 2019-02-17 16:31:17
 */
 const express = require('express');
 const app = express();
@@ -58,7 +58,10 @@ app.post('/comment', router.doComment)
 app.get('/getallcomment', router.getAllComment)
 // 获得某个用户信息
 app.get('/getuserinfo', router.getUserInfo)
-
+// 得到所有comment的数量
+app.get('/getallcommentCount', router.getAllCommentCount)
+// 得到个人所有commeng
+app.get('/getMyComment', router.getMyComment)
 
 // 报错页面
 app.get('/sorry', router.showSorry)

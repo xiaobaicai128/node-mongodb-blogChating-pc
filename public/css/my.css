@@ -3,7 +3,7 @@
 * @Date:   2019-01-06 14:25:35
 * @E-mail: 21718534@zju.edu.cn
 * @Last Modified by:   乔勇
-* @Last Modified time: 2019-01-17 21:20:20
+* @Last Modified time: 2019-02-17 21:10:06
 */
 .top{
 	margin-top: 76px;
@@ -70,4 +70,7 @@ ul li{
 }
 .my-cotainer{
     margin-left: 230px;
+}
+small{
+    margin-right: 100px !important;
 }

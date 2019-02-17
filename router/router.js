@@ -3,7 +3,7 @@
 * @Date:   2018-12-21 19:53:22
 * @E-mail: 21718534@zju.edu.cn
 * @Last Modified by:   乔勇
-* @Last Modified time: 2019-01-22 22:31:06
+* @Last Modified time: 2019-02-17 21:14:58
 */
 const db = require('../model/db.js')
 const formidable = require('formidable');
@@ -24,6 +24,9 @@ exports.showLogin = function(req, res,next){
 exports.doLogin = function(req, res, next) {
 	let form = new formidable.IncomingForm();
 	form.parse(req, (err, fields, files) => {
+		db.getCount('comment', {'username': fields.username}, (err, result2) => { // 得到个人comment的数量
+						req.session.count = result2 || '--';		
+		})
 		//查询数据库
 		db.find('forum', {'username': fields.username}, (err, result) => {
 			if(err) {
@@ -33,6 +36,11 @@ exports.doLogin = function(req, res, next) {
 				res.send('-1'); // 未注册
 				return;
 			} else if(fields.password === result[0].password) {
+				var count;
+				// function getMyCount(){
+					
+				
+				
 				//写入session  一定要写在send之前
 				req.session.login = 3;
 				req.session.username = fields.username;
@@ -41,6 +49,7 @@ exports.doLogin = function(req, res, next) {
 				req.session.birthday = result[0].birthday || '';
 				req.session.localtion = result[0].localtion || '';
 				req.session.gender = result[0].gender || '';
+				
 				// console.log(result[0]._id)
 				// console.log(req.session.oid)
 
@@ -48,6 +57,7 @@ exports.doLogin = function(req, res, next) {
 			} else {
 				res.send('-2'); // 密码错误
 			}
+			
 		})
 	})
 }
@@ -94,7 +104,8 @@ exports.doRegist = function(req, res, next){
 exports.showMain = function(req, res, next) {
 	res.render('main.ejs', {
 		'username': req.session.login == 3 ? req.session.username : '游客',
-		'avatar' : req.session.login === 3 ? req.session.avatar : 'default.jpg'
+		'avatar' : req.session.login === 3 ? req.session.avatar : 'default.jpg',
+		'commentCount': req.session.count
 	});
 }
 //个人主页
@@ -113,7 +124,8 @@ exports.showMy = function(req, res, next){
 		'say': req.session.say,
 		'birthday': req.session.birthday,
 		'gender': req.session.gender,
-		'localtion': req.session.localtion
+		'localtion': req.session.localtion,
+		'count': req.session.count
 	})
 }
 //进入个人信息页面
@@ -151,7 +163,7 @@ exports.doSetAvatar = function(req, res, next){
 				return;
 			} 
 				req.session.avatar = req.session.oid + extname; //重新写入session
-				console.log(req.session.avatar)
+				// console.log(req.session.avatar)
 				res.redirect('/cut'); //跳转路由
 			
 		})
@@ -225,6 +237,9 @@ exports.doAdd = function(req, res, next){
 }
 // 处理发言
 exports.doComment = function(req, res, next){
+	if(req.session.login != 3){
+		return;
+	}
 	// 时间格式转变
 	function formateDate(date){
 		let y = date.getFullYear();
@@ -259,6 +274,9 @@ exports.doComment = function(req, res, next){
 				} else{
 					res.send('6');
 				}
+			});
+			db.getCount('comment', (err, result) => {
+				req.session.count = result;
 			})
 		}
 	})
@@ -266,7 +284,7 @@ exports.doComment = function(req, res, next){
 // 得到所有发言
 exports.getAllComment = function(req, res, next){
 	let page = req.query.page;
-	db.find('comment',{}, {'pageamount':6,'page':page,'sort':{'date':-1}}, (err, result) => {// 按时间date倒序
+	db.find('comment',{}, {'pageamount':7, 'page':page,'sort':{'date':-1}}, (err, result) => {// 按时间date倒序
 			if(err){
 				next();
 				return;
@@ -287,8 +305,26 @@ exports.getUserInfo = function(req, res, next){
 		}
 	})
 }
-
-
+// 得到所有comment的数量
+exports.getAllCommentCount = function(req, res, next){
+	db.getCount('comment', {}, (err, result) => {
+		if(err){
+			next();
+			return;
+		}
+		res.send(result.toString());
+	})
+}
+// 得到个人所有的comment
+exports.getMyComment = function(req, res, next){
+	db.find('comment', {'username': req.session.username}, {'sort':{'date':-1}}, (err, result) => {
+		if(err){
+			next();
+			return;
+		}
+		res.json(result);
+	})
+}
 
 
 

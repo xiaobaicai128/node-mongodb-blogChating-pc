@@ -3,7 +3,7 @@
 * @Date:   2018-12-25 20:12:35
 * @E-mail: 21718534@zju.edu.cn
 * @Last Modified by:   乔勇
-* @Last Modified time: 2019-01-22 22:34:19
+* @Last Modified time: 2019-01-24 20:03:00
 */
 body{
 	background-color: #73cff1
@@ -165,11 +165,21 @@ body{
 .tem{
 	display: none;
 }
+.size{
+	height: 975px;
+}
+.pagination{
+	margin:2px 0 !important;
+}
+.pagination li{
+	float: left;
+}
 .content .right{
 	background-color: #c9f1ff;
 	width: 319px;
 	height: 1200px;
 	float: left;
+	/*overflow: hidden;*/
 }
 .content .right .client{
 	margin-top: 20px;
